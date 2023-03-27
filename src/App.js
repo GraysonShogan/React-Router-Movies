@@ -13,11 +13,9 @@ export default function App() {
   useEffect(() => {
     const getMovies = () => {
       axios
-        .get("http://localhost:5001/api/movies") // Study this endpoint with Postman
+        .get("http://localhost:5001/api/movies")
         .then((response) => {
           setMovies(response.data);
-          // Study this response with a breakpoint or log statements
-          // and set the response data as the 'movies' slice of state
         })
         .catch((error) => {
           console.error("Server Error", error);
@@ -26,9 +24,9 @@ export default function App() {
     getMovies();
   }, []);
 
-  const addToSavedList = (id) => {
-    // This is stretch. Prevent the same movie from being "saved" more than once
-  };
+  // const addToSavedList = (id) => {
+  //   // This is stretch. Prevent the same movie from being "saved" more than once
+  // };
 
   return (
     <div>
